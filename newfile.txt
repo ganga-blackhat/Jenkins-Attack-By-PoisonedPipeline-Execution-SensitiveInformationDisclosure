@@ -1,0 +1,19 @@
+
+<com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>\n
+          <scope>GLOBAL</scope>\n          <id>db054ae0-5da1-4f73-9dd9-20c34b504f0a</id>\n         
+           <description>GitHub Creds</description>\n          
+           
+<username>ganga-blackhat</username>\n          
+<password>{AQAAABAAAAAw70C3Gxk01M4S1qFdT5v+SoDiwE13Umxu74Pl1LRZbePY0FHSSbUmLpsBQQackITVdbgX00MAd/pzKCPzqVGuxg==}</password>\n         
+ <usernameSecret>false</usernameSecret>\n       
+ 
+  </com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>\n        '
+<org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl plugin="plain-credentials@143.v1b_df8b_d3b_e48">\n          
+<scope>GLOBAL</scope>\n          
+<id>27658af2-e4f0-41be-9af5-ecde301308f8</id>\n         
+
+ <description>JENKINS API TOKEN</description>\n         
+  <secret>{AQAAABAAAAAw4pLC/gUnMdLdAKaWE+RuYy1Rb7haLTHaHWkZuqcVAXnODSjb6J9QqVf5uen2QOdEgolsm/Z/IQ74zXxcxrP7kA==}</secret>\n       
+  
+   </org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl>\n     
+    </java.util.concurrent.CopyOnWriteArrayList>\n    </entry>\n  </domainCredentialsMap>\n</com.cloudbees.plugins.credentials.SystemCredentialsProvider>'

